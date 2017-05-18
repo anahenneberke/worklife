@@ -1,0 +1,11 @@
+<h1>Workshops List</h1>
+
+<p><%= link_to "Create a workshop", new_workshop_path %></p>
+
+<% @workshops.each do |workshop| %>
+<div>
+	<p><%= workshop.title %></p>
+	<p><%= workshop.description %></p>
+	<p><%= link_to "Edit", edit_workshop_path(workshop) %></p>
+</div>
+<% end %>

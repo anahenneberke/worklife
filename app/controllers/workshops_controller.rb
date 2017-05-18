@@ -32,6 +32,10 @@ class WorkshopsController < ApplicationController
 		end
 	end
 
+	def index
+		@workshops = Workshop.all
+	end
+
 	private
 	def workshop_params
 		params.require(:workshop).permit(:title, :description)
