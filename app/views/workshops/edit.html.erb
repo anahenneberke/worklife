@@ -1,7 +1,7 @@
-<h1>Create a new workshop</h1>
+<h1>Edit workshop</h1>
 
 <% if @workshop.errors.any? %>
-	<h2>Could not create workshop.</h2>
+	<h2>Could not edit workshop.</h2>
 	<ul>
 		<% @workshop.errors.full_messages.each do |msg| %>
 			<li><%= msg %></li>

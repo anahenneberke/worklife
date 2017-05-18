@@ -11,12 +11,25 @@ class WorkshopsController < ApplicationController
 			redirect_to workshop_path(@workshop)
 		else
 			render 'new'	
-		end
-		
+		end		
 	end
 
 	def show
 		@workshop = Workshop.find(params[:id])
+	end
+
+	def edit
+		@workshop = Workshop.find(params[:id])
+	end
+
+	def update
+		@workshop = Workshop.find(params[:id])
+		if @workshop.update(workshop_params)
+			flash[:notice] = "Workshop updated successfully."
+			redirect_to workshop_path(@workshop)
+		else
+			render 'edit'
+		end
 	end
 
 	private
