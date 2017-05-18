@@ -1,0 +1,27 @@
+<h1>Create a new workshop</h1>
+
+<% if @workshop.errors.any? %>
+	<h2>Could not create workshop.</h2>
+	<ul>
+		<% @workshop.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+<%= form_for @workshop do |f| %>
+
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</p>
+
+	<p>
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>
