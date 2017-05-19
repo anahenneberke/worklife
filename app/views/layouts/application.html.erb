@@ -3,17 +3,21 @@
   <head>
     <title>Worklife</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono|PT+Serif"
   </head>
 
   <body>
-  	<% flash.each do |name, msg| %>
-  	<ul>
-  		<li><%=msg%></li>
-  	</ul>
-  	<% end %>
-    <%= yield %>
+    <%= render 'layouts/navigation' %> 
+    <%= render 'layouts/jumbotron' %>
+    <div class="container">
+    	<% flash.each do |name, msg| %>
+    	<ul>
+    		<li><%=msg%></li>
+    	</ul>
+    	<% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.1.1'
 # Use Boostrap for front-end styling
 gem 'bootstrap-sass', '~> 3.3.6'
+# User JQuery
+gem 'jquery-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

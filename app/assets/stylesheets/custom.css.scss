@@ -1,2 +1,39 @@
+$navbar-default-bg: #def1e7;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  font-family: 'PT Serif', serif;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar {
+   margin-bottom: 0;
+   border: 0;
+}
+
+.jumbotron {
+	background-color: #def1e7;
+}
+
+.btn {
+	color: white;
+	background-color: #5cc18d;
+	border: none;
+	border-radius: 3px;
+	font-size: 1.00em;
+	
+	&:hover {
+		color: #5CC18D;
+    border-color: #3c7b5b;
+    background: #3c7b5b;
+	}
+}
