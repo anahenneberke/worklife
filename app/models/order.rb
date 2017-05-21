@@ -3,10 +3,12 @@ class Order < ApplicationRecord
 	validates :quantity, presence: true
 
 	belongs_to :user
+	belongs_to :catalog_item
 	validates :user_id, presence: true
+	validates :catalog_item_id, presence: true
 
 	def default_values
-    self.quantity  ||= 1
-  end
+	    self.quantity  ||= 1
+	  end
 
 end

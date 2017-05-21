@@ -8,13 +8,15 @@ class CatalogItemsTest < ActionDispatch::IntegrationTest
 				description: "In this 10-week course, students will learn to plan and execute a marketing campaign to acquire and engage users.",
 				date: Date.parse("18-05-2018"),
 				start_time: Time.now,
-				end_time: Time.now)
-		@catalog_item2= CatalogItem.create(
+				end_time: Time.now,
+				price: 25)
+		@catalog_item2 = CatalogItem.create(
 				title: "Break Into Coding",
 				description: "Join us for a talk where you'll learn how to get started in coding!",
 				date: Date.parse("18-05-2018"),
 				start_time: Time.now,
-				end_time: Time.now)
+				end_time: Time.now,
+				price: 30)
 	end
 
 	test "should get catalog_items index" do

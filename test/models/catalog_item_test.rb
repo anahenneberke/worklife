@@ -3,7 +3,11 @@ require 'test_helper'
 class CatalogItemTest < ActiveSupport::TestCase
 
 	def setup
-		@catalogItem = CatalogItem.new(title: "Branding for startups", description: "Learn how to quickly develop a working brand strategy using a simple process and intuitive model.", date: Date.parse('20-05-2017'), start_time: Time.now)
+		@catalogItem = CatalogItem.new(title: "Branding for startups",
+			description: "Learn how to quickly develop a working brand strategy using a simple process and intuitive model.",
+			date: Date.parse('20-05-2017'),
+			start_time: Time.now,
+			price: 25)
 	end
 
 	test "catalog_item should be valid" do
@@ -27,6 +31,11 @@ class CatalogItemTest < ActiveSupport::TestCase
 
 	test "description shouldn't be more than 500 characters" do
 		@catalogItem.description = "a" * 501
+		assert_not @catalogItem.valid?
+	end
+
+	test "price should be present" do
+		@catalogItem.price = nil
 		assert_not @catalogItem.valid?
 	end
 

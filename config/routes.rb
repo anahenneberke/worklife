@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get 'pages/home', to: 'pages#home'
   get '/about', to: 'pages#about'
 
-  get '/catalog_items', to: 'catalog_items#index'
-  get '/catalog_items/:id', to: 'catalog_items#show', as: 'catalog_item'
+  get '/workshops/:id', to: 'catalog_items#show', as: 'catalog_item'
+  get '/workshops', to: 'catalog_items#index'
 
-  resources :workshops
+  resources :worshops
 
 end

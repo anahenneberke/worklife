@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
 		@user = User.new(name: "Rodrigo", email: "rodrigo@gmail.com", phone_number: "935776653")
 	end
 
-  test "user should be valid" do
+    test "user should be valid" do
 		assert @user.valid?
 	end
 

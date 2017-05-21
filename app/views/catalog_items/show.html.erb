@@ -15,7 +15,12 @@
 
 				<div class="date-time-container">
 					<div class="date-details"><%= @catalog_item.date.to_formatted_s(:catalog_item_date) %></div>
-					<div class="time-details"><%= @catalog_item.start_time.to_formatted_s(:catalog_item_time) %> - <%= @catalog_item.end_time.to_formatted_s(:catalog_item_time) %></div>
+					<div class="time-details">
+						<%= @catalog_item.start_time.to_formatted_s(:catalog_item_time) %>
+						<% if @catalog_item.end_time != nil %>
+							- <%= @catalog_item.end_time.to_formatted_s(:catalog_item_time) %>
+						<% end %>	
+					</div>
 				</div>
 
 				<div class="location">
