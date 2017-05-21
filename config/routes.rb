@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/workshops/:id', to: 'catalog_items#show', as: 'catalog_item'
   get '/workshops', to: 'catalog_items#index', as: 'catalog_items'
 
-  get 'checkout', to: 'orders#checkout', as: 'checkout'
+  get 'checkout/:catalog_item_id', to: 'orders#checkout', as: 'checkout'
 
   # resources :worshops
 
