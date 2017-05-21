@@ -1,5 +1,42 @@
 <div class="container">
-	<h1><%= @catalog_item.title %></h1>
-	<p><%= @catalog_item.description %></p>
-</div>
+	<div class="catalog-item-header">
+			<h1><%= @catalog_item.title %></h1>
+	</div>
+	<div class="row">
+	  <div class="col-md-8">
+	  	<div class="catalog_item_scope">
+				<p class="about">About this workshop</p>
+				<p class="description"><%= @catalog_item.description %></p>
+			</div>
+	  </div>
+	  <div class="col-md-4">
 
+	  	<div class="catalog_item_info_panel">
+
+				<div class="date-time-container">
+					<div class="date-details"><%= @catalog_item.date.to_formatted_s(:catalog_item_date) %></div>
+					<div class="time-details"><%= @catalog_item.start_time.to_formatted_s(:catalog_item_time) %> - <%= @catalog_item.end_time.to_formatted_s(:catalog_item_time) %></div>
+				</div>
+
+				<div class="location">
+					<div class="map-icon">
+						<span class="glyphicon glyphicon-map-marker"></span>
+					</div>
+					<p>Edifício Oura Azul, Estrada de Santa Eulália, Albufeira</p>
+				</div>
+
+				<div class="ticket-price">
+					<span class="left">Regular Ticket</span>
+					<span class="right">£25</span>
+				</div>
+
+				<div class="purchase">
+					<%= form_tag do %>
+					  <!-- TODO -->
+					<% end %>
+				</div>
+
+			</div>
+		</div>
+  </div>
+</div>

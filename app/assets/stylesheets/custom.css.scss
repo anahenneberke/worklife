@@ -103,3 +103,68 @@ body {
 		text-decoration: underline;
 	}
 }
+
+.catalog-item-header {
+	padding: 40px 0 0 0;
+	h1 {
+		font-size: 4em;
+	}
+}
+
+.catalog_item_scope {
+	p {
+		font-size: 1.25em;
+	}
+	.about {
+		font-size: 1.5em;
+		padding: 20px 0 0 0;
+	}
+	.description {
+		width: 50%;
+	}
+}
+
+.catalog_item_info_panel {
+	padding: 20px;
+	border: 1px solid black;
+
+	.date-time-container {
+		padding-bottom: 20px;
+	}
+
+	.date-details {
+		font-size: 1.25em;
+		font-weight: bold;
+	}
+
+	.map-icon {
+		float: left;
+		margin: 0 20px 0 0;
+	}
+
+	.location {
+		border-top: 1px solid #dfdfdf;
+		padding: 20px 0 20px 0;
+	}
+
+	.glyphicon-map-marker {
+    font-size: 2em;
+	}
+
+	.ticket-price {
+		border-top: 1px solid #dfdfdf;
+		padding-top: 20px;
+		font-size: 1.25em;
+		font-weight: bold;
+		text-align: center;
+		display: flex;
+		span {
+			width: 50%;
+		}
+
+	}
+
+	.purchase {
+
+	}
+}
