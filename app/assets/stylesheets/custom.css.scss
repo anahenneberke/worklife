@@ -96,3 +96,10 @@ body {
     float: right;
 	}
 }
+
+.catalog-item:hover {
+	background: rgba(223, 223, 223, 0.1);
+	a {
+		text-decoration: underline;
+	}
+}
