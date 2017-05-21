@@ -7,9 +7,17 @@ body {
   font-family: 'PT Serif', serif;
   color: #333333;
   -webkit-font-smoothing: antialiased;
+
+  a {
+		color: #5CC18D;
+		&:hover {
+			color: #3c7b5b;
+			text-decoration: none;
+		}
+	}
 }
 
-.mw-layout {
+.max-width {
   max-width: 60em;
   margin-left: auto;
   margin-right: auto;
@@ -54,4 +62,27 @@ body {
 	}
 }
 
+.catalog-item {
+  border-top: 1px solid #dfdfdf;
+	padding: 20px;
+	display: flex;
+  align-items: top;
 
+	.item-details {
+		width: 70%;
+		margin: 0 20px 0 0;
+	}
+
+	.item-title {
+		font-size: 2em;
+	}
+
+	p {
+		font-size: 1.25em;
+	}
+
+	.date-time-container {
+	  width: 30%;
+    float: right;
+	}
+}
