@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
 
   get '/workshops/:id', to: 'catalog_items#show', as: 'catalog_item'
-  get '/workshops', to: 'catalog_items#index'
+  get '/workshops', to: 'catalog_items#index', as: 'catalog_items'
 
-  resources :worshops
+  get 'checkout', to: 'orders#checkout', as: 'checkout'
+
+  # resources :worshops
 
 end
