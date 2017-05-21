@@ -156,15 +156,26 @@ body {
 		padding-top: 20px;
 		font-size: 1.25em;
 		font-weight: bold;
-		text-align: center;
 		display: flex;
-		span {
-			width: 50%;
+		.left {
+			width: 70%;
+			text-align: left;
 		}
-
+		.right {
+			width: 30%;
+			text-align: right;
+		}
 	}
 
 	.purchase {
+		padding-top: 20px;
 
+		.btn {
+			width: 100%;
+			padding: 10px;
+			font-size: 1.25em;
+			font-weight: bold;
+		}
 	}
+
 }
