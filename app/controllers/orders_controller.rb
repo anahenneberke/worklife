@@ -5,8 +5,7 @@ class OrdersController < ApplicationController
 	end
 
 	def create
-		@user = User.new
-		@order = @user.orders.build(order_params)
+		@order = Order.new(order_params)
 		if @order.save
 			# redirect_to confirmation_path
 			logger.debug "SAVED"
