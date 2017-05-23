@@ -5,13 +5,10 @@ class OrdersController < ApplicationController
 	end
 
 	def create
-		@user = User.new
-		@order = @user.orders.build(order_params)
+		@order = Order.new(order_params)
 		if @order.save
 			# redirect_to confirmation_path
-			logger.debug "SAVED"
 		else
-			logger.debug @order.errors
 			# redirect_to error_path
 		end
 	end
@@ -21,12 +18,12 @@ class OrdersController < ApplicationController
 	end
 
 	private
-		def user_params
-	    [:name, :email, :phone_number]
-	  end
+	def user_params
+    [:name, :email, :phone_number]
+  end
 
-		def order_params
-			params.require(:order).permit(:id, :catalog_item_id, user_attributes: user_params)
-		end
+	def order_params
+		params.require(:order).permit(:id, :catalog_item_id, user_attributes: user_params)
+	end
 
 end

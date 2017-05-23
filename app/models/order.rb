@@ -4,11 +4,11 @@ class Order < ApplicationRecord
 
 	belongs_to :user
 	belongs_to :catalog_item
-	validates :user_id, presence: true
-	validates :catalog_item_id, presence: true
+	validates :user, presence: true
+	validates :catalog_item, presence: true
 
 	accepts_nested_attributes_for :user
-  validates_associated :user
+    validates_associated :user
 
 	def default_values
 	    self.quantity  ||= 1
