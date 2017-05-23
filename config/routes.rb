@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get '/workshops', to: 'catalog_items#index', as: 'catalog_items'
 
   get 'checkout/:catalog_item_id', to: 'orders#checkout', as: 'checkout'
+  post 'orders', to: 'orders#create'
+  get 'confirmation/:order_id', to: 'orders#confirmation', as: 'confirmation'
 
-  # resources :worshops
+  resources :worshops
 
 end
