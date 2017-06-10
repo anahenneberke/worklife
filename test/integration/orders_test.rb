@@ -10,11 +10,21 @@ class OrdersTest < ActionDispatch::IntegrationTest
 				start_time: Time.now,
 				end_time: Time.now,
 				price: 25)
+		@catalog_item.save
 	end
 
 	test "should get checkout page" do
 		get checkout_path(@catalog_item)
-		assert_response :success
+		assert_template 'orders/checkout'
+	end
+
+	test "reject order without user params" do
+		get checkout_path(@catalog_item)
+		assert_template 'orders/checkout'
+		assert_no_difference 'Order.count' do
+			post orders_path, params: { order: { catalog_item_id: @catalog_item.id, user: { name: " ", email: " ", phone_number: " "}}}
+		end
+		assert_redirected_to(checkout_path(@catalog_item))
 	end
 
 end

@@ -1,6 +1,14 @@
 <div class="container">
 	<h1>Order Details</h1>
 
+	<% if @order.errors.any? %>
+		<%= pluralize(@order.errors.count, "error") %>
+		Could not save <%= @order.class %>:
+		<% @order.errors.full_messages.each do |msg| %>
+			<%= msg %>
+		<% end %>	
+	<% end %>
+
 	<h2><%= @order.catalog_item.title %></h2>
 	<div class="ticket-price">
 		<span class="left">Regular Ticket</span>

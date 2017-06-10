@@ -6,10 +6,15 @@ class OrdersController < ApplicationController
 
 	def create
 		@order = Order.new(order_params)
+		_user = User.find_by_email(order_params[:user_attributes][:email])
+		if (user != nil)
+			@order.user = _user
+		end
 		if @order.save
 			# redirect_to confirmation_path
 		else
-			# redirect_to error_path
+			# redirect_to checkout_path(@order.catalog_item_id)
+			render '/orders/checkout/'
 		end
 	end
 

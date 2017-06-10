@@ -15,6 +15,6 @@ module Worklife
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-		config.logger = Logger.new(STDOUT)
+	# config.logger = Logger.new(STDOUT)
   end
 end
